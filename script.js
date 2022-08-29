@@ -17,7 +17,7 @@ hero_hp.innerHTML = hero.hp;
 const hero_mana = document.getElementById("hero-mana");
 hero_mana.innerHTML = hero.mana;
 const hero_attack = document.getElementById("hero-attack");
-hero_attack.innerHTML = hero.attack;
+
 const hero_armor = document.getElementById("hero-armor");
 hero_armor.innerHTML = hero.armor;
 
