@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="round">
+      <div id="round-data"></div>
+    </div>
+    <div class="main-widget">
+      <div id="hero" class="hero-style">
+        <div id="hero-stats" class="hero-stats-style">
+          <div id="hero-hp1" class="hero-style">
+            hp:
+            <div id="hero-hp"></div>
+          </div>
+          <div id="hero-mana2" class="hero-style">
+            mana:
+            <div id="hero-mana"></div>
+          </div>
+          <div id="hero-attack3" class="hero-style">
+            attack:
+            <div id="hero-attack"></div>
+          </div>
+          <div id="hero-armor4" class="hero-style">
+            armor:
+            <div id="hero-armor"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="boss" class="boss-style">
+        <div id="boss-stats" class="boss-stats-style">
+          <div id="boss-hp1" class="boss-style">
+            hp:
+            <div id="boss-hp"></div>
+          </div>
+          <div id="boss-mana2" class="boss-style">
+            mana:
+            <div id="boss-mana"></div>
+          </div>
+          <div id="boss-attack3" class="boss-style">
+            attack:
+            <div id="boss-attack"></div>
+          </div>
+          <div id="boss-armor4" class="boss-style">
+            armor:
+            <div id="boss-armor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div><img src="img/idle.gif" height="320px" width="320px" /></div>
+    </div>
+
+    <div>
+      <div id="hero-skills" class="hero-skills-style">
+        <div id="hero-attack" class="hero-style">
+          <button id="button-attack" onclick="attack()">attack</button>
+        </div>
+        <div id="hero-superUdar" class="hero-style" onclick="superUdar()">
+          <button>super udar</button>
+        </div>
+        <div id="hero-strangeUdar" class="hero-style" onclick="strangeUdar()">
+          <button>strange udar</button>
+        </div>
+        <div id="hero-heal" class="hero-style" onclick="heal()">
+          <button>heal</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="log">
+      <div class="log-style">
+        <div id="log-data" class="log-data"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
