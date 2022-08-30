@@ -56,6 +56,7 @@ function attack() {
   check();
   countRound();
   log();
+  // updataProgressHp(abc, boss.hp);
 }
 
 function superUdar() {
@@ -170,3 +171,11 @@ const logData = document.getElementById("log-data");
 function log() {
   logData.innerHTML = `Damage: ${hero.attack}, Damage Taken: ${boss.attack}`;
 }
+
+// const abc = document.querySelector(".boss-style-hp");
+// function updataProgressHp(progressHp, value) {
+//   progressHp.querySelector(
+//     ".progress-boss-data-style"
+//   ).style.width = `${value}`;
+//   progressHp.querySelector(".boss-data-style").textContent = `${value}`;
+// }

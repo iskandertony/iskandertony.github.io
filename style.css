@@ -74,3 +74,62 @@
   display: flex;
   justify-content: space-between;
 }
+
+.boss-style-hp {
+  padding: 0px 20px;
+  background-color: rgba(255, 0, 0, 0.719);
+  border-radius: 5px;
+}
+
+.boss-data-style-hp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+}
+
+/* .progress-boss-data-style {
+  background-color: brown;
+} */
+
+.style-hp {
+  padding: 0px 20px;
+  background-color: rgba(255, 0, 0, 0.719);
+  border-radius: 5px;
+}
+
+.style-mana {
+  margin: 0px 10px;
+  padding: 0px 20px;
+  background-color: rgba(74, 139, 236, 0.719);
+  border-radius: 5px;
+}
+
+.data-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+}
+
+.style-armor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
+
+.hero-img-style-armor {
+  position: absolute;
+}
+
+.hero-data-style-armor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: black;
+}
