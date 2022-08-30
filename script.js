@@ -17,7 +17,6 @@ hero_hp.innerHTML = hero.hp;
 const hero_mana = document.getElementById("hero-mana");
 hero_mana.innerHTML = hero.mana;
 const hero_attack = document.getElementById("hero-attack");
-
 const hero_armor = document.getElementById("hero-armor");
 hero_armor.innerHTML = hero.armor;
 
@@ -26,7 +25,6 @@ boss_hp.innerHTML = boss.hp;
 const boss_mana = document.getElementById("boss-mana");
 boss_mana.innerHTML = boss.mana;
 const boss_attack = document.getElementById("boss-attack");
-
 const boss_armor = document.getElementById("boss-armor");
 boss_armor.innerHTML = boss.armor;
 
@@ -40,6 +38,9 @@ function countRound() {
   }
 }
 
+let gifHeroAttack = `<div><img src="img/sprite-fight.gif"  /></div>`;
+let abc = document.getElementById("gif-hero-attack");
+
 //SKILLS
 function attack() {
   hero.attack = Math.ceil(Math.random() * 100);
@@ -51,6 +52,7 @@ function attack() {
   }
   boss_armor.innerHTML = boss.armor;
   boss_hp.innerHTML = boss.hp;
+  abc.innerHTML = gifHeroAttack;
   superCrit();
   bossAtack();
   countRound();
