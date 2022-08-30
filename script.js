@@ -53,9 +53,9 @@ function attack() {
   boss_hp.innerHTML = boss.hp;
   superCrit();
   bossAtack();
-  check();
   countRound();
   log();
+  check();
   // updataProgressHp(abc, boss.hp);
 }
 
@@ -79,8 +79,8 @@ function superUdar() {
   superCrit();
   bossAtack();
   console.log(hero);
-  check();
   countRound();
+  check();
 }
 
 function strangeUdar() {
@@ -90,6 +90,7 @@ function strangeUdar() {
   hero_hp.innerHTML = hero.hp;
   boss_hp.innerHTML = boss.hp;
   countRound();
+  check();
 }
 
 function heal() {
@@ -104,6 +105,7 @@ function heal() {
   hero_mana.innerHTML = hero.mana;
   hero_hp.innerHTML = hero.hp;
   countRound();
+  check();
 }
 //SKILLS
 function bossAtack() {
