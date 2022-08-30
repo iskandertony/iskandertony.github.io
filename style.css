@@ -61,13 +61,11 @@
   border-radius: 4px;
   width: 500px;
   height: 250px;
+  overflow: auto;
 }
 
 .log-data {
-  display: flex;
   padding: 10px;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .gif {

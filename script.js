@@ -1,5 +1,5 @@
 const hero = {
-  hp: 1000,
+  hp: 100000,
   mana: 500,
   attack: 0,
   armor: 30,
@@ -39,7 +39,19 @@ function countRound() {
 }
 
 let gifHeroAttack = `<div><img src="img/sprite-fight.gif"  /></div>`;
-let abc = document.getElementById("gif-hero-attack");
+let gif_HeroAttack = document.getElementById("gif-hero-attack");
+
+let gifBossAttack = `<div><img src="img/sprite-idle-boss.gif"  /></div>`;
+let gif_BossAttack = document.getElementById("gif-boss-pain");
+
+function animationGif() {
+  gif_HeroAttack.innerHTML = gifHeroAttack;
+  gif_BossAttack.innerHTML = gifBossAttack;
+  setTimeout(() => {
+    gif_HeroAttack.innerHTML = "";
+    gif_BossAttack.innerHTML = "";
+  }, 2500);
+}
 
 //SKILLS
 function attack() {
@@ -52,7 +64,7 @@ function attack() {
   }
   boss_armor.innerHTML = boss.armor;
   boss_hp.innerHTML = boss.hp;
-  abc.innerHTML = gifHeroAttack;
+  animationGif();
   superCrit();
   bossAtack();
   countRound();
@@ -173,7 +185,9 @@ function superCrit() {
 
 const logData = document.getElementById("log-data");
 function log() {
-  logData.innerHTML = `Damage: ${hero.attack}, Damage Taken: ${boss.attack}`;
+  const p = document.createElement("p");
+  p.innerHTML = `Damage: ${hero.attack}, Damage Taken: ${boss.attack}`;
+  logData.appendChild(p);
 }
 
 // const abc = document.querySelector(".boss-style-hp");
@@ -183,3 +197,11 @@ function log() {
 //   ).style.width = `${value}`;
 //   progressHp.querySelector(".boss-data-style").textContent = `${value}`;
 // }
+
+document.addEventListener('keypress', (event) => {
+  const keyName = event.key;
+  if (keyName === 'q') {
+    attack()
+  } 
+  console.log(('key: ' + keyName));
+});
