@@ -18,7 +18,8 @@
 
 .hero-style {
   display: flex;
-  padding: 5px;
+  padding: 10px;
+
   align-items: center;
   justify-content: center;
 }
@@ -50,6 +51,7 @@
 .log {
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .log-style {
@@ -66,4 +68,9 @@
   padding: 10px;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.gif {
+  display: flex;
+  justify-content: space-between;
 }

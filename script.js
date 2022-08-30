@@ -26,7 +26,7 @@ boss_hp.innerHTML = boss.hp;
 const boss_mana = document.getElementById("boss-mana");
 boss_mana.innerHTML = boss.mana;
 const boss_attack = document.getElementById("boss-attack");
-boss_attack.innerHTML = boss.attack;
+
 const boss_armor = document.getElementById("boss-armor");
 boss_armor.innerHTML = boss.armor;
 
