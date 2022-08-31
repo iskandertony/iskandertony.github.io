@@ -40,17 +40,35 @@ function countRound() {
 
 let gifHeroAttack = `<div><img src="img/sprite-fight.gif"  /></div>`;
 let gif_HeroAttack = document.getElementById("gif-hero-attack");
-
+let gifHeroGun = `<div><img src="img/sprite-gun.gif"  /></div>`;
+let gif_HeroGun = document.getElementById("gif-hero-attack");
 let gifBossAttack = `<div><img src="img/sprite-idle-boss.gif"  /></div>`;
 let gif_BossAttack = document.getElementById("gif-boss-pain");
 
-function animationGif() {
+function animationGifAttack() {
   gif_HeroAttack.innerHTML = gifHeroAttack;
   gif_BossAttack.innerHTML = gifBossAttack;
   setTimeout(() => {
     gif_HeroAttack.innerHTML = "";
     gif_BossAttack.innerHTML = "";
+    document.getElementById("hero-attack").style.display = "flex";
+    document.getElementById("hero-superUdar").style.display = "flex";
+    document.getElementById("hero-strangeUdar").style.display = "flex";
+    document.getElementById("hero-heal").style.display = "flex";
   }, 2500);
+}
+
+function animationGifGun() {
+  gif_HeroGun.innerHTML = gifHeroGun;
+  gif_BossAttack.innerHTML = gifBossAttack;
+  setTimeout(() => {
+    gif_HeroGun.innerHTML = "";
+    gif_BossAttack.innerHTML = "";
+    document.getElementById("hero-attack").style.display = "flex";
+    document.getElementById("hero-superUdar").style.display = "flex";
+    document.getElementById("hero-strangeUdar").style.display = "flex";
+    document.getElementById("hero-heal").style.display = "flex";
+  }, 3000);
 }
 
 //SKILLS
@@ -64,13 +82,16 @@ function attack() {
   }
   boss_armor.innerHTML = boss.armor;
   boss_hp.innerHTML = boss.hp;
-  animationGif();
+  animationGifAttack();
   superCrit();
   bossAtack();
   countRound();
   log();
   check();
-  // updataProgressHp(abc, boss.hp);
+  document.getElementById("hero-attack").style.display = "none";
+  document.getElementById("hero-superUdar").style.display = "none";
+  document.getElementById("hero-strangeUdar").style.display = "none";
+  document.getElementById("hero-heal").style.display = "none";
 }
 
 function superUdar() {
@@ -90,11 +111,16 @@ function superUdar() {
   hero_mana.innerHTML = hero.mana;
   boss_armor.innerHTML = boss.armor;
   boss_hp.innerHTML = boss.hp;
+
+  animationGifGun();
   superCrit();
   bossAtack();
-  console.log(hero);
   countRound();
   check();
+  document.getElementById("hero-attack").style.display = "none";
+  document.getElementById("hero-superUdar").style.display = "none";
+  document.getElementById("hero-strangeUdar").style.display = "none";
+  document.getElementById("hero-heal").style.display = "none";
 }
 
 function strangeUdar() {
@@ -190,18 +216,10 @@ function log() {
   logData.appendChild(p);
 }
 
-// const abc = document.querySelector(".boss-style-hp");
-// function updataProgressHp(progressHp, value) {
-//   progressHp.querySelector(
-//     ".progress-boss-data-style"
-//   ).style.width = `${value}`;
-//   progressHp.querySelector(".boss-data-style").textContent = `${value}`;
-// }
-
-document.addEventListener('keypress', (event) => {
+document.addEventListener("keypress", (event) => {
   const keyName = event.key;
-  if (keyName === 'q') {
-    attack()
-  } 
-  console.log(('key: ' + keyName));
+  if (keyName === "q") {
+    attack();
+  }
+  console.log("key: " + keyName);
 });
