@@ -12,7 +12,7 @@ const boss = {
   attack: 0,
   armor: 60,
 };
-
+//HERO STATS
 const hero_hp = document.getElementById("hero-hp");
 hero_hp.innerHTML = hero.hp;
 const hero_mana = document.getElementById("hero-mana");
@@ -22,7 +22,7 @@ const hero_food = document.getElementById("hero-food");
 hero_food.innerHTML = hero.food;
 const hero_armor = document.getElementById("hero-armor");
 hero_armor.innerHTML = hero.armor;
-
+//BOSS STATS
 const boss_hp = document.getElementById("boss-hp");
 boss_hp.innerHTML = boss.hp;
 const boss_mana = document.getElementById("boss-mana");
@@ -30,30 +30,22 @@ boss_mana.innerHTML = boss.mana;
 const boss_attack = document.getElementById("boss-attack");
 const boss_armor = document.getElementById("boss-armor");
 boss_armor.innerHTML = boss.armor;
-
-const round = document.getElementById("round-data");
-let number = 0;
-function countRound() {
-  number += 1;
-  round.innerHTML = `Round: ${number}`;
-  if (number === 7) {
-    hero.armor = 30;
-  }
-}
-
+//GIF ANIMATION
 let gifHeroAttack = `<div><img src="img/sprite-fight.gif"  /></div>`;
 let gif_HeroAttack = document.getElementById("gif-hero-attack");
 let gifHeroGun = `<div><img src="img/sprite-gun.gif"  /></div>`;
 let gif_HeroGun = document.getElementById("gif-hero-attack");
-let gifBossAttack = `<div><img src="img/sprite-idle-boss.gif"  /></div>`;
-let gif_BossAttack = document.getElementById("gif-boss-pain");
-
+let gifBossPain = `<div><img src="img/sprite-pain.gif"  /></div>`;
+let gif_BossPain = document.getElementById("gif-boss-pain");
+let gifBossGun = `<div><img src="img/sprite-gun-boss.gif"  /></div>`;
+let gif_BossGun = document.getElementById("gif-boss-pain");
+//ANIMATION SKILLS
 function animationGifAttack() {
   gif_HeroAttack.innerHTML = gifHeroAttack;
-  gif_BossAttack.innerHTML = gifBossAttack;
+  gif_BossPain.innerHTML = gifBossPain;
   setTimeout(() => {
     gif_HeroAttack.innerHTML = "";
-    gif_BossAttack.innerHTML = "";
+    gif_BossPain.innerHTML = "";
     document.getElementById("hero-attack").style.display = "flex";
     document.getElementById("hero-superUdar").style.display = "flex";
     document.getElementById("hero-strangeUdar").style.display = "flex";
@@ -65,10 +57,10 @@ function animationGifAttack() {
 
 function animationGifGun() {
   gif_HeroGun.innerHTML = gifHeroGun;
-  gif_BossAttack.innerHTML = gifBossAttack;
+  gif_BossGun.innerHTML = gifBossGun;
   setTimeout(() => {
     gif_HeroGun.innerHTML = "";
-    gif_BossAttack.innerHTML = "";
+    gif_BossGun.innerHTML = "";
     document.getElementById("hero-attack").style.display = "flex";
     document.getElementById("hero-superUdar").style.display = "flex";
     document.getElementById("hero-strangeUdar").style.display = "flex";
@@ -76,6 +68,16 @@ function animationGifGun() {
     document.getElementById("gif-idle").style.display = "flex";
     document.getElementById("gif-idle-boss").style.display = "flex";
   }, 3000);
+}
+// ROUND
+const round = document.getElementById("round-data");
+let number = 0;
+function countRound() {
+  number += 1;
+  round.innerHTML = `Round: ${number}`;
+  if (number === 7) {
+    hero.armor = 30;
+  }
 }
 
 //SKILLS
@@ -158,7 +160,7 @@ function heal() {
   countRound();
   check();
 }
-//SKILLS
+//FUNCTIONS
 function bossAtack() {
   boss.attack = Math.ceil(Math.random() * 200);
   checkAttack();
@@ -219,14 +221,14 @@ function superCrit() {
   hero_hp.innerHTML = hero.hp;
   console.log(boss.attack);
 }
-
+//LOG
 const logData = document.getElementById("log-data");
 function log() {
   const p = document.createElement("p");
   p.innerHTML = `Damage: ${hero.attack}, Damage Taken: ${boss.attack}`;
   logData.appendChild(p);
 }
-
+//KEY BINDS
 document.addEventListener("keypress", (event) => {
   const keyName = event.key;
   if (keyName === "q") {
