@@ -3,8 +3,6 @@
   padding: 0;
 }
 
-
-
 .round {
   display: flex;
   justify-content: center;
@@ -21,7 +19,6 @@
 .hero-style {
   display: flex;
   padding: 10px;
-
   align-items: center;
   justify-content: center;
 }
@@ -36,6 +33,8 @@
 .boss-style {
   display: flex;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .boss-stats-style {
@@ -89,10 +88,6 @@
   color: white;
 }
 
-/* .progress-boss-data-style {
-  background-color: brown;
-} */
-
 .style-hp {
   padding: 0px 20px;
   background-color: rgba(255, 0, 0, 0.719);
@@ -100,10 +95,26 @@
 }
 
 .style-mana {
-  margin: 0px 10px;
-  padding: 0px 20px;
-  background-color: rgba(74, 139, 236, 0.719);
-  border-radius: 5px;
+  display: flex;
+  margin: 0px 5px;
+  padding: 0px 10px;
+  align-items: center;
+}
+
+.hero-img-style-food {
+  margin-right: 5px;
+}
+
+.style-food {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hero-data-style-mana {
+  margin-left: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .data-style {
@@ -118,7 +129,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 10px;
   border-radius: 5px;
 }
 

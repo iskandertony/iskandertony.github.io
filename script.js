@@ -1,7 +1,8 @@
 const hero = {
   hp: 100000,
-  mana: 500,
+  mana: 30,
   attack: 0,
+  food: 5,
   armor: 30,
 };
 
@@ -17,6 +18,8 @@ hero_hp.innerHTML = hero.hp;
 const hero_mana = document.getElementById("hero-mana");
 hero_mana.innerHTML = hero.mana;
 const hero_attack = document.getElementById("hero-attack");
+const hero_food = document.getElementById("hero-food");
+hero_food.innerHTML = hero.food;
 const hero_armor = document.getElementById("hero-armor");
 hero_armor.innerHTML = hero.armor;
 
@@ -55,6 +58,8 @@ function animationGifAttack() {
     document.getElementById("hero-superUdar").style.display = "flex";
     document.getElementById("hero-strangeUdar").style.display = "flex";
     document.getElementById("hero-heal").style.display = "flex";
+    document.getElementById("gif-idle").style.display = "flex";
+    document.getElementById("gif-idle-boss").style.display = "flex";
   }, 2500);
 }
 
@@ -68,6 +73,8 @@ function animationGifGun() {
     document.getElementById("hero-superUdar").style.display = "flex";
     document.getElementById("hero-strangeUdar").style.display = "flex";
     document.getElementById("hero-heal").style.display = "flex";
+    document.getElementById("gif-idle").style.display = "flex";
+    document.getElementById("gif-idle-boss").style.display = "flex";
   }, 3000);
 }
 
@@ -92,12 +99,14 @@ function attack() {
   document.getElementById("hero-superUdar").style.display = "none";
   document.getElementById("hero-strangeUdar").style.display = "none";
   document.getElementById("hero-heal").style.display = "none";
+  document.getElementById("gif-idle").style.display = "none";
+  document.getElementById("gif-idle-boss").style.display = "none";
 }
 
 function superUdar() {
   if (hero.mana > 0) {
     hero.attack = 200;
-    hero.mana -= 200;
+    hero.mana -= 5;
     boss.hp = boss.hp + boss.armor - hero.attack;
     boss.armor -= 10;
   } else {
@@ -121,6 +130,8 @@ function superUdar() {
   document.getElementById("hero-superUdar").style.display = "none";
   document.getElementById("hero-strangeUdar").style.display = "none";
   document.getElementById("hero-heal").style.display = "none";
+  document.getElementById("gif-idle").style.display = "none";
+  document.getElementById("gif-idle-boss").style.display = "none";
 }
 
 function strangeUdar() {
@@ -134,15 +145,15 @@ function strangeUdar() {
 }
 
 function heal() {
-  if (hero.mana > 0) {
+  if (hero.food > 0) {
     hero.hp = hero.hp + 400;
-    hero.mana = hero.mana - 100;
+    hero.food = hero.food - 1;
   } else {
     hero.hp = hero.hp + 0;
   }
   superCrit();
   bossAtack();
-  hero_mana.innerHTML = hero.mana;
+  hero_food.innerHTML = hero.food;
   hero_hp.innerHTML = hero.hp;
   countRound();
   check();
