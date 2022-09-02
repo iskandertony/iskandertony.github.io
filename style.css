@@ -144,3 +144,16 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   color: black;
 }
+
+@media (max-width: 630px) {
+  .gif-hero {
+    width: 220px;
+  }
+  .gif-boss {
+    width: 220px;
+  }
+
+  .gif-hero-dop {
+    display: none;
+  }
+}

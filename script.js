@@ -39,6 +39,8 @@ let gifBossPain = `<div><img src="img/sprite-pain.gif"  /></div>`;
 let gif_BossPain = document.getElementById("gif-boss-pain");
 let gifBossGun = `<div><img src="img/sprite-gun-boss.gif"  /></div>`;
 let gif_BossGun = document.getElementById("gif-boss-pain");
+let gif_HeroFood = document.getElementById("gif-hero-attack");
+let gifHeroFood = `<div><img src="img/sprite-food.gif"  /></div>`;
 //ANIMATION SKILLS
 function animationGifAttack() {
   gif_HeroAttack.innerHTML = gifHeroAttack;
@@ -60,6 +62,21 @@ function animationGifGun() {
   gif_BossGun.innerHTML = gifBossGun;
   setTimeout(() => {
     gif_HeroGun.innerHTML = "";
+    gif_BossGun.innerHTML = "";
+    document.getElementById("hero-attack").style.display = "flex";
+    document.getElementById("hero-superUdar").style.display = "flex";
+    document.getElementById("hero-strangeUdar").style.display = "flex";
+    document.getElementById("hero-heal").style.display = "flex";
+    document.getElementById("gif-idle").style.display = "flex";
+    document.getElementById("gif-idle-boss").style.display = "flex";
+  }, 3000);
+}
+
+function animationGifFood() {
+  gif_HeroFood.innerHTML = gifHeroFood;
+  gif_BossGun.innerHTML = gifBossGun;
+  setTimeout(() => {
+    gif_HeroFood.innerHTML = "";
     gif_BossGun.innerHTML = "";
     document.getElementById("hero-attack").style.display = "flex";
     document.getElementById("hero-superUdar").style.display = "flex";
@@ -153,12 +170,19 @@ function heal() {
   } else {
     hero.hp = hero.hp + 0;
   }
+  animationGifFood();
   superCrit();
   bossAtack();
   hero_food.innerHTML = hero.food;
   hero_hp.innerHTML = hero.hp;
   countRound();
   check();
+  document.getElementById("hero-attack").style.display = "none";
+  document.getElementById("hero-superUdar").style.display = "none";
+  document.getElementById("hero-strangeUdar").style.display = "none";
+  document.getElementById("hero-heal").style.display = "none";
+  document.getElementById("gif-idle").style.display = "none";
+  document.getElementById("gif-idle-boss").style.display = "none";
 }
 //FUNCTIONS
 function bossAtack() {
