@@ -1,5 +1,5 @@
 const hero = {
-  hp: 100000,
+  hp: 1000,
   mana: 30,
   attack: 0,
   food: 5,
@@ -31,16 +31,16 @@ const boss_attack = document.getElementById("boss-attack");
 const boss_armor = document.getElementById("boss-armor");
 boss_armor.innerHTML = boss.armor;
 //GIF ANIMATION
-let gifHeroAttack = `<div><img src="img/sprite-fight.gif"  /></div>`;
+let gifHeroAttack = `<div class="img" ><img src="img/sprite-fight.gif"  /></div>`;
 let gif_HeroAttack = document.getElementById("gif-hero-attack");
-let gifHeroGun = `<div><img src="img/sprite-gun.gif"  /></div>`;
+let gifHeroGun = `<div class="img" ><img src="img/sprite-gun.gif"  /></div>`;
 let gif_HeroGun = document.getElementById("gif-hero-attack");
-let gifBossPain = `<div><img src="img/sprite-pain.gif"  /></div>`;
+let gifBossPain = `<div class="img" ><img src="img/sprite-pain.gif"  /></div>`;
 let gif_BossPain = document.getElementById("gif-boss-pain");
-let gifBossGun = `<div><img src="img/sprite-gun-boss.gif"  /></div>`;
+let gifBossGun = `<div class="img"><img src="img/sprite-gun-boss.gif"  /></div>`;
 let gif_BossGun = document.getElementById("gif-boss-pain");
 let gif_HeroFood = document.getElementById("gif-hero-attack");
-let gifHeroFood = `<div><img src="img/sprite-food.gif"  /></div>`;
+let gifHeroFood = `<div class="img"><img src="img/sprite-food.gif"  /></div>`;
 //ANIMATION SKILLS
 function animationGifAttack() {
   gif_HeroAttack.innerHTML = gifHeroAttack;

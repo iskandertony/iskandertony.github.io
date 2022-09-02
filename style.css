@@ -43,7 +43,9 @@
   align-items: center;
   flex-direction: row;
 }
-
+.gif-boss-dop {
+  display: flex;
+}
 .hero-skills-style {
   display: flex;
   padding: 10px;
@@ -163,6 +165,10 @@
   }
 
   @media (max-width: 400px) {
+    .body {
+      margin: 0px;
+      padding: 0;
+    }
     .hero-stats-style {
       display: flex;
       flex-direction: column;
@@ -186,9 +192,14 @@
       align-items: center;
       flex-direction: column;
     }
-    .img {
-      width: 220px;
-      height: 220px;
+
+    .gif-boss-dop {
+      display: none;
+    }
+
+    .gif {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
