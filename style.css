@@ -145,15 +145,50 @@
   color: black;
 }
 
-@media (max-width: 630px) {
-  .gif-hero {
-    width: 220px;
-  }
-  .gif-boss {
-    width: 220px;
+@media (max-width: 650px) {
+  .log {
+    display: none;
   }
 
-  .gif-hero-dop {
+  .log-style {
     display: none;
+  }
+
+  .main-widget {
+    display: flex;
+  }
+
+  .round {
+    font-size: 24px;
+  }
+
+  @media (max-width: 400px) {
+    .hero-stats-style {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .style-armor {
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      padding: 0px 10px;
+    }
+    .boss-style {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .boss-stats-style {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .img {
+      width: 220px;
+      height: 220px;
+    }
   }
 }
